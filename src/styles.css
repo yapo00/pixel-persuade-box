@@ -54,6 +54,8 @@
 @keyframes pulse-soft {
   0%, 100% { opacity: 1; text-shadow: 0 0 0 transparent; }
   50% { opacity: 0.85; text-shadow: 0 0 20px var(--gold); }
+}
+
 
 @keyframes marquee {
   from { transform: translateX(0); }
