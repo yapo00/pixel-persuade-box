@@ -43,7 +43,17 @@
   --animate-float: float 6s ease-in-out infinite;
   --animate-glow: glow 2.4s ease-in-out infinite;
   --animate-fade-up: fade-up 0.8s ease-out both;
+  --animate-text-float: text-float 3.5s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
 }
+
+@keyframes text-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; text-shadow: 0 0 0 transparent; }
+  50% { opacity: 0.85; text-shadow: 0 0 20px var(--gold); }
 
 @keyframes marquee {
   from { transform: translateX(0); }
