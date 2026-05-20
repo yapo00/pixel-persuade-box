@@ -29,7 +29,7 @@ const SOCIALS = {
 // EDITAR AQUÍ: URL del video de presentación (YouTube embed, Vimeo, o archivo .mp4)
 // Ejemplo YouTube: "https://www.youtube.com/embed/VIDEO_ID"
 // Ejemplo MP4: deja PRESENTATION_VIDEO = "" y sube el archivo a src/assets
-const PRESENTATION_VIDEO = "";
+const PRESENTATION_VIDEO: string = "";
 
 // EDITAR AQUÍ: las 7 imágenes del carrusel (reemplaza las URLs)
 const CAROUSEL_IMAGES = [
