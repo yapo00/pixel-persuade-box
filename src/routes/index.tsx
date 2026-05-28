@@ -177,10 +177,10 @@ function Index() {
           </h2>
           <p className="text-sm text-muted-foreground mt-1">Descúbrelo en este video</p>
         </div>
-        <div className="relative rounded-3xl overflow-hidden border border-primary/30 bg-card aspect-video shadow-[var(--shadow-glow)]">
+        <div className="relative mx-auto rounded-3xl overflow-hidden border border-primary/30 bg-black aspect-[9/16] max-w-[320px] sm:max-w-[360px] shadow-[var(--shadow-glow)]">
           {PRESENTATION_VIDEO ? (
             PRESENTATION_VIDEO.endsWith(".mp4") ? (
-              <video src={PRESENTATION_VIDEO} autoPlay loop muted playsInline className="w-full h-full object-cover text-lg my-0" />
+              <video src={PRESENTATION_VIDEO} autoPlay loop muted playsInline className="w-full h-full object-contain" />
             ) : (
               <iframe
                 src={PRESENTATION_VIDEO}
