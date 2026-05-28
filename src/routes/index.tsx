@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 // EDITAR AQUÍ: enlaces de redes sociales
 const SOCIALS = {
   facebook: "https://www.facebook.com/share/1CVdBxuDme/",
-  whatsapp: "https://wa.me/59179883768",
+  whatsapp: "https://wa.me/59179883768?text=Hola%2C%20necesito%20asistencia.%20Escribo%20desde%20la%20web",
   instagram: "https://www.instagram.com/capturaestudiosdigital?igsh=Y3Jqa2dreTcwNGx1",
   tiktok: "https://www.tiktok.com/@capturaestudiosyasmani?_r=1&_t=ZS-96WGFdH7nV9",
 };
