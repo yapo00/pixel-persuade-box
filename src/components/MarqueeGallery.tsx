@@ -22,12 +22,12 @@ export function MarqueeGallery({ images, reverse = false, speed = 35 }: Props) {
         {loop.map((img, i) => (
           <div
             key={i}
-            className="relative shrink-0 w-64 aspect-[9/16] rounded-2xl overflow-hidden border border-primary/20 shadow-[var(--shadow-glow)] group"
+            className="relative shrink-0 w-64 aspect-[9/16] rounded-2xl overflow-hidden border border-primary/20 shadow-[var(--shadow-glow)] bg-black group"
           >
             <img
               src={img.src}
               alt={img.alt}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
