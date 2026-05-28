@@ -180,7 +180,7 @@ function Index() {
         <div className="relative rounded-3xl overflow-hidden border border-primary/30 bg-card aspect-video shadow-[var(--shadow-glow)]">
           {PRESENTATION_VIDEO ? (
             PRESENTATION_VIDEO.endsWith(".mp4") ? (
-              <video src={PRESENTATION_VIDEO} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+              <video src={PRESENTATION_VIDEO} autoPlay loop muted playsInline className="w-full h-full object-cover text-lg my-0" />
             ) : (
               <iframe
                 src={PRESENTATION_VIDEO}
