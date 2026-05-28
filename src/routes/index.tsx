@@ -223,14 +223,42 @@ function Index() {
         </a>
       </section>
 
-      {/* CAROUSEL */}
-      <section className="px-5 max-w-xl mx-auto mt-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-        <div className="flex items-end justify-between mb-4">
-          <h2 className="text-2xl font-bold">Nuestro trabajo</h2>
-          <span className="text-xs text-muted-foreground">7 proyectos</span>
+      {/* GALERÍA CONTINUA */}
+      <section className="mt-14 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+        <div className="px-5 max-w-xl mx-auto text-center mb-6 space-y-2">
+          <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary uppercase tracking-widest">
+            <Sparkles className="size-3" /> Portafolio en vivo
+          </span>
+          <h2 className="text-3xl font-extrabold">
+            Diseños que <span className="text-primary animate-pulse-soft">venden por ti</span> 24/7
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Cada Landing Page Bio es una <span className="text-primary font-semibold">máquina de conversión</span> —
+            pensada para captar atención en segundos y convertir cada visita en un cliente real.
+          </p>
         </div>
-        <Carousel images={CAROUSEL_IMAGES} />
+
+        <div className="space-y-4">
+          <MarqueeGallery images={GALLERY_ROW_A} speed={40} />
+          <MarqueeGallery images={GALLERY_ROW_B} speed={50} reverse />
+        </div>
+
+        <div className="px-5 max-w-xl mx-auto mt-6 grid grid-cols-3 gap-3 text-center">
+          <div className="rounded-2xl border border-border bg-card/60 p-3">
+            <p className="text-2xl font-extrabold text-primary">+150</p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Proyectos</p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card/60 p-3">
+            <p className="text-2xl font-extrabold text-primary">3x</p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Más Ventas</p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card/60 p-3">
+            <p className="text-2xl font-extrabold text-primary">24h</p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Entrega</p>
+          </div>
+        </div>
       </section>
+
 
       {/* MARQUEE */}
       <section className="mt-12 py-4 border-y border-border bg-card/40 overflow-hidden">
