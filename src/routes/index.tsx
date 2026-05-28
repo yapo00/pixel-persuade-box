@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Facebook, Instagram, MapPin, MessageCircle, Phone, Play, Sparkles, TrendingUp, Zap } from "lucide-react";
 import logo from "@/assets/logo.webp";
+import presentacionVideo from "@/assets/video-presentacion.mp4";
 import { SocialButton } from "@/components/SocialButton";
 import { MarqueeGallery } from "@/components/MarqueeGallery";
 import work1 from "@/assets/work-1.jpeg";
@@ -38,7 +39,7 @@ const SOCIALS = {
 // EDITAR AQUÍ: URL del video de presentación (YouTube embed, Vimeo, o archivo .mp4)
 // Ejemplo YouTube: "https://www.youtube.com/embed/VIDEO_ID"
 // Ejemplo MP4: deja PRESENTATION_VIDEO = "" y sube el archivo a src/assets
-const PRESENTATION_VIDEO: string = "";
+const PRESENTATION_VIDEO: string = presentacionVideo;
 
 // EDITAR AQUÍ: las imágenes del carrusel continuo (puedes reemplazar cada una)
 const GALLERY_ROW_A = [
@@ -179,7 +180,7 @@ function Index() {
         <div className="relative rounded-3xl overflow-hidden border border-primary/30 bg-card aspect-video shadow-[var(--shadow-glow)]">
           {PRESENTATION_VIDEO ? (
             PRESENTATION_VIDEO.endsWith(".mp4") ? (
-              <video src={PRESENTATION_VIDEO} controls className="w-full h-full object-cover" />
+              <video src={PRESENTATION_VIDEO} autoPlay loop muted playsInline className="w-full h-full object-cover" />
             ) : (
               <iframe
                 src={PRESENTATION_VIDEO}
