@@ -2,7 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Facebook, Instagram, MapPin, MessageCircle, Phone, Play, Sparkles, TrendingUp, Zap } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import { SocialButton } from "@/components/SocialButton";
-import { Carousel } from "@/components/Carousel";
+import { MarqueeGallery } from "@/components/MarqueeGallery";
+import work1 from "@/assets/work-1.jpeg";
+import work2 from "@/assets/work-2.jpeg";
+import work3 from "@/assets/work-3.jpeg";
+import work4 from "@/assets/work-4.jpeg";
+import work5 from "@/assets/work-5.jpeg";
+import work6 from "@/assets/work-6.jpeg";
+import work7 from "@/assets/work-7.jpeg";
+import work8 from "@/assets/work-8.jpeg";
+import work9 from "@/assets/work-9.jpeg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -31,15 +40,20 @@ const SOCIALS = {
 // Ejemplo MP4: deja PRESENTATION_VIDEO = "" y sube el archivo a src/assets
 const PRESENTATION_VIDEO: string = "";
 
-// EDITAR AQUÍ: las 7 imágenes del carrusel (reemplaza las URLs)
-const CAROUSEL_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80", alt: "Proyecto 1" },
-  { src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80", alt: "Proyecto 2" },
-  { src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80", alt: "Proyecto 3" },
-  { src: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&q=80", alt: "Proyecto 4" },
-  { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80", alt: "Proyecto 5" },
-  { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80", alt: "Proyecto 6" },
-  { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80", alt: "Proyecto 7" },
+// EDITAR AQUÍ: las imágenes del carrusel continuo (puedes reemplazar cada una)
+const GALLERY_ROW_A = [
+  { src: work1, alt: "Landing Profesional 01" },
+  { src: work2, alt: "Curso Creativo" },
+  { src: work3, alt: "Marketing Digital" },
+  { src: work4, alt: "Estilo Premium" },
+  { src: work5, alt: "Fitness & Resultados" },
+];
+const GALLERY_ROW_B = [
+  { src: work6, alt: "Viajes & Experiencias" },
+  { src: work7, alt: "Música & Contenido" },
+  { src: work8, alt: "Servicios para Mascotas" },
+  { src: work9, alt: "Bienestar & Terapia" },
+  { src: work1, alt: "Diseño Personalizado" },
 ];
 
 const WHATSAPP_NUMBER = "+591 79883768";
@@ -209,14 +223,42 @@ function Index() {
         </a>
       </section>
 
-      {/* CAROUSEL */}
-      <section className="px-5 max-w-xl mx-auto mt-12 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-        <div className="flex items-end justify-between mb-4">
-          <h2 className="text-2xl font-bold">Nuestro trabajo</h2>
-          <span className="text-xs text-muted-foreground">7 proyectos</span>
+      {/* GALERÍA CONTINUA */}
+      <section className="mt-14 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+        <div className="px-5 max-w-xl mx-auto text-center mb-6 space-y-2">
+          <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary uppercase tracking-widest">
+            <Sparkles className="size-3" /> Portafolio en vivo
+          </span>
+          <h2 className="text-3xl font-extrabold">
+            Diseños que <span className="text-primary animate-pulse-soft">venden por ti</span> 24/7
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            Cada Landing Page Bio es una <span className="text-primary font-semibold">máquina de conversión</span> —
+            pensada para captar atención en segundos y convertir cada visita en un cliente real.
+          </p>
         </div>
-        <Carousel images={CAROUSEL_IMAGES} />
+
+        <div className="space-y-4">
+          <MarqueeGallery images={GALLERY_ROW_A} speed={40} />
+          <MarqueeGallery images={GALLERY_ROW_B} speed={50} reverse />
+        </div>
+
+        <div className="px-5 max-w-xl mx-auto mt-6 grid grid-cols-3 gap-3 text-center">
+          <div className="rounded-2xl border border-border bg-card/60 p-3">
+            <p className="text-2xl font-extrabold text-primary">+150</p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Proyectos</p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card/60 p-3">
+            <p className="text-2xl font-extrabold text-primary">3x</p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Más Ventas</p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card/60 p-3">
+            <p className="text-2xl font-extrabold text-primary">24h</p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Entrega</p>
+          </div>
+        </div>
       </section>
+
 
       {/* MARQUEE */}
       <section className="mt-12 py-4 border-y border-border bg-card/40 overflow-hidden">
