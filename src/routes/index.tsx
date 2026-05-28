@@ -2,7 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Facebook, Instagram, MapPin, MessageCircle, Phone, Play, Sparkles, TrendingUp, Zap } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import { SocialButton } from "@/components/SocialButton";
-import { Carousel } from "@/components/Carousel";
+import { MarqueeGallery } from "@/components/MarqueeGallery";
+import work1 from "@/assets/work-1.jpeg";
+import work2 from "@/assets/work-2.jpeg";
+import work3 from "@/assets/work-3.jpeg";
+import work4 from "@/assets/work-4.jpeg";
+import work5 from "@/assets/work-5.jpeg";
+import work6 from "@/assets/work-6.jpeg";
+import work7 from "@/assets/work-7.jpeg";
+import work8 from "@/assets/work-8.jpeg";
+import work9 from "@/assets/work-9.jpeg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -31,15 +40,20 @@ const SOCIALS = {
 // Ejemplo MP4: deja PRESENTATION_VIDEO = "" y sube el archivo a src/assets
 const PRESENTATION_VIDEO: string = "";
 
-// EDITAR AQUÍ: las 7 imágenes del carrusel (reemplaza las URLs)
-const CAROUSEL_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80", alt: "Proyecto 1" },
-  { src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80", alt: "Proyecto 2" },
-  { src: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80", alt: "Proyecto 3" },
-  { src: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1200&q=80", alt: "Proyecto 4" },
-  { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80", alt: "Proyecto 5" },
-  { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80", alt: "Proyecto 6" },
-  { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80", alt: "Proyecto 7" },
+// EDITAR AQUÍ: las imágenes del carrusel continuo (puedes reemplazar cada una)
+const GALLERY_ROW_A = [
+  { src: work1, alt: "Landing Profesional 01" },
+  { src: work2, alt: "Curso Creativo" },
+  { src: work3, alt: "Marketing Digital" },
+  { src: work4, alt: "Estilo Premium" },
+  { src: work5, alt: "Fitness & Resultados" },
+];
+const GALLERY_ROW_B = [
+  { src: work6, alt: "Viajes & Experiencias" },
+  { src: work7, alt: "Música & Contenido" },
+  { src: work8, alt: "Servicios para Mascotas" },
+  { src: work9, alt: "Bienestar & Terapia" },
+  { src: work1, alt: "Diseño Personalizado" },
 ];
 
 const WHATSAPP_NUMBER = "+591 79883768";
