@@ -173,7 +173,8 @@ function Index() {
       </section>
 
       {/* VIDEO PRESENTACIÓN */}
-      <section className="px-5 max-w-xl mx-auto mt-12 animate-fade-up" style={{ animationDelay: "0.25s" }}>
+      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto mt-12 animate-fade-up lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center" style={{ animationDelay: "0.25s" }}>
+        <div className="lg:order-2">
         <div className="text-center mb-4">
           <h2 className="text-2xl font-bold">
             ¿Por qué necesitas una <span className="text-primary">Landing Page Bio</span>?
