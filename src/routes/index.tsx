@@ -3,6 +3,7 @@ import { Facebook, Instagram, MapPin, MessageCircle, Phone, Play, Sparkles, Tren
 import logo from "@/assets/logo.webp";
 import presentacionVideo from "@/assets/video-presentacion.mp4";
 import { SocialButton } from "@/components/SocialButton";
+import { IntroOverlay } from "@/components/IntroOverlay";
 import { MarqueeGallery } from "@/components/MarqueeGallery";
 import work1 from "@/assets/work-1.jpeg";
 import work2 from "@/assets/work-2.jpeg";
