@@ -67,8 +67,10 @@ const ADDRESS = "Calle Ingavi #253 entre Velasco y Colón, Santa Cruz — Bolivi
 function Index() {
   return (
     <main className="min-h-screen text-foreground overflow-hidden">
+      <IntroOverlay />
       {/* HERO */}
-      <section className="relative px-5 pt-12 pb-10 max-w-xl mx-auto">
+      <section className="relative px-5 pt-12 pb-10 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto">
+
         <div className="flex justify-center mb-6 animate-fade-up">
           <div className="relative">
             <div className="absolute -inset-4 rounded-3xl bg-primary/20 blur-2xl animate-glow" style={{ ['--glow-color' as string]: 'var(--gold)' }} />
