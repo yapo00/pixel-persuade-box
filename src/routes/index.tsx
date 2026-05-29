@@ -173,46 +173,66 @@ function Index() {
       </section>
 
       {/* VIDEO PRESENTACIÓN */}
-      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto mt-12 animate-fade-up lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center" style={{ animationDelay: "0.25s" }}>
-        <div className="lg:order-2">
-        <div className="text-center mb-4">
-          <h2 className="text-2xl font-bold">
-            ¿Por qué necesitas una <span className="text-primary">Landing Page Bio</span>?
-          </h2>
-          <p className="text-sm text-muted-foreground mt-1">Descúbrelo en este video</p>
-        </div>
-        <div className="relative mx-auto rounded-3xl overflow-hidden border border-primary/30 bg-black aspect-[9/16] max-w-[320px] sm:max-w-[360px] shadow-[var(--shadow-glow)]">
-          {PRESENTATION_VIDEO ? (
-            PRESENTATION_VIDEO.endsWith(".mp4") ? (
-              <video src={PRESENTATION_VIDEO} autoPlay loop muted playsInline className="w-full h-full object-contain" />
+      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto mt-12 animate-fade-up" style={{ animationDelay: "0.25s" }}>
+        <div className="lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center">
+          <div className="text-center lg:text-left mb-4 lg:mb-0 lg:order-1">
+            <h2 className="text-2xl lg:text-4xl font-bold">
+              ¿Por qué necesitas una <span className="text-primary">Landing Page Bio</span>?
+            </h2>
+            <p className="text-sm lg:text-base text-muted-foreground mt-1 lg:mt-3">
+              Descúbrelo en este video y mira cómo convertimos visitas en clientes reales.
+            </p>
+            {/* CTA on desktop next to text */}
+            <a
+              href={WHATSAPP_QUIERO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex mt-6 group relative items-center gap-2 font-bold text-lg py-4 px-8 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-0.5"
+              style={{
+                backgroundImage: "var(--gradient-gold)",
+                color: "oklch(0.1 0 0)",
+                boxShadow: "var(--shadow-glow)",
+              }}
+            >
+              <Sparkles className="size-5" />
+              ¡Quiero mi página!
+              <Sparkles className="size-5" />
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:translate-x-full transition-transform duration-1000" />
+            </a>
+          </div>
+          <div className="relative mx-auto rounded-3xl overflow-hidden border border-primary/30 bg-black aspect-[9/16] max-w-[320px] sm:max-w-[360px] lg:max-w-[380px] shadow-[var(--shadow-glow)] lg:order-2">
+            {PRESENTATION_VIDEO ? (
+              PRESENTATION_VIDEO.endsWith(".mp4") ? (
+                <video src={PRESENTATION_VIDEO} autoPlay loop muted playsInline className="w-full h-full object-contain" />
+              ) : (
+                <iframe
+                  src={PRESENTATION_VIDEO}
+                  title="Video de presentación"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )
             ) : (
-              <iframe
-                src={PRESENTATION_VIDEO}
-                title="Video de presentación"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            )
-          ) : (
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center p-6 bg-gradient-to-br from-primary/10 to-transparent">
-              <div className="size-16 rounded-full bg-primary/20 flex items-center justify-center text-primary animate-glow" style={{ ['--glow-color' as string]: 'var(--gold)' }}>
-                <Play className="size-7 ml-1" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center p-6 bg-gradient-to-br from-primary/10 to-transparent">
+                <div className="size-16 rounded-full bg-primary/20 flex items-center justify-center text-primary animate-glow" style={{ ['--glow-color' as string]: 'var(--gold)' }}>
+                  <Play className="size-7 ml-1" />
+                </div>
+                <p className="text-sm text-muted-foreground max-w-xs">
+                  Espacio reservado para tu video.<br />
+                  <span className="text-xs">Edita <code className="text-primary">PRESENTATION_VIDEO</code> en el constructor.</span>
+                </p>
               </div>
-              <p className="text-sm text-muted-foreground max-w-xs">
-                Espacio reservado para tu video.<br />
-                <span className="text-xs">Edita <code className="text-primary">PRESENTATION_VIDEO</code> en el constructor.</span>
-              </p>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
-        {/* CTA QUIERO MI PÁGINA */}
+        {/* CTA QUIERO MI PÁGINA (mobile/tablet) */}
         <a
           href={WHATSAPP_QUIERO}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 group relative block w-full text-center font-bold text-lg py-4 px-6 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-0.5"
+          className="lg:hidden mt-5 group relative block w-full text-center font-bold text-lg py-4 px-6 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-0.5"
           style={{
             backgroundImage: "var(--gradient-gold)",
             color: "oklch(0.1 0 0)",
@@ -227,6 +247,7 @@ function Index() {
           <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:translate-x-full transition-transform duration-1000" />
         </a>
       </section>
+
 
       {/* GALERÍA CONTINUA */}
       <section className="mt-14 animate-fade-up" style={{ animationDelay: "0.3s" }}>
