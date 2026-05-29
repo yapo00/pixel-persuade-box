@@ -331,7 +331,7 @@ function Index() {
       </section>
 
       {/* HELP / CONTACT */}
-      <section className="px-5 max-w-xl mx-auto mt-8 space-y-4">
+      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <a
           href={WHATSAPP_LINK}
           target="_blank"
