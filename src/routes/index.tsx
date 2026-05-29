@@ -133,7 +133,7 @@ function Index() {
       </section>
 
       {/* SOCIAL BUTTONS */}
-      <section className="px-5 max-w-xl mx-auto space-y-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
         <SocialButton
           href={SOCIALS.facebook}
           variant="facebook"
