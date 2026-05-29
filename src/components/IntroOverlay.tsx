@@ -121,23 +121,33 @@ export function IntroOverlay() {
           })}
 
           <div className="relative z-10 h-full w-full flex flex-col items-center justify-center px-6 text-center">
-            <h1 className="font-extrabold tracking-tight text-4xl sm:text-6xl md:text-7xl flex flex-wrap justify-center gap-x-1">
-              {LETTERS.map((ch, i) => (
-                <span
-                  key={i}
-                  className="intro-letter inline-block"
-                  style={{
-                    animationDelay: `${1.6 + i * 0.09}s`,
-                    background: "linear-gradient(135deg, oklch(0.95 0.17 95), oklch(0.75 0.2 60))",
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    color: "transparent",
-                    transformOrigin: `${(i % 4) * 25}% ${i % 2 === 0 ? -50 : 150}%`,
-                  }}
-                >
-                  {ch === " " ? "\u00A0" : ch}
-                </span>
-              ))}
+            <h1 className="font-extrabold tracking-tight text-3xl sm:text-6xl md:text-7xl flex flex-wrap justify-center gap-x-3 sm:gap-x-4">
+              {WORDS.map((word, wi) => {
+                const offset = wi === 0 ? 0 : WORDS[0].length;
+                return (
+                  <span key={wi} className="inline-flex whitespace-nowrap">
+                    {word.split("").map((ch, i) => {
+                      const globalIdx = offset + i;
+                      return (
+                        <span
+                          key={i}
+                          className="intro-letter inline-block"
+                          style={{
+                            animationDelay: `${1.6 + globalIdx * 0.09}s`,
+                            background: "linear-gradient(135deg, oklch(0.95 0.17 95), oklch(0.75 0.2 60))",
+                            WebkitBackgroundClip: "text",
+                            backgroundClip: "text",
+                            color: "transparent",
+                            transformOrigin: `${(globalIdx % 4) * 25}% ${globalIdx % 2 === 0 ? -50 : 150}%`,
+                          }}
+                        >
+                          {ch}
+                        </span>
+                      );
+                    })}
+                  </span>
+                );
+              })}
             </h1>
             <p
               className="mt-5 text-sm sm:text-base uppercase tracking-[0.4em] text-primary/90 intro-tagline"
