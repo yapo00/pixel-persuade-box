@@ -78,6 +78,69 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== Intro overlay ===== */
+@keyframes intro-fall {
+  0% { transform: translateY(-20vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
+}
+@keyframes intro-letter-in {
+  0% { opacity: 0; transform: translate3d(var(--lx, 0), var(--ly, 0), 0) scale(0.3) rotate(var(--lr, 0deg)); filter: blur(12px); }
+  60% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translate3d(0,0,0) scale(1) rotate(0deg); filter: blur(0); }
+}
+@keyframes intro-scan {
+  0% { transform: translateX(-100%); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+@keyframes intro-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.85 0.17 85 / 0.7); }
+  50% { box-shadow: 0 0 0 30px oklch(0.85 0.17 85 / 0); }
+}
+@keyframes intro-bar {
+  0% { transform: scaleX(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+@keyframes intro-tagline-in {
+  0% { opacity: 0; letter-spacing: 1em; }
+  100% { opacity: 1; letter-spacing: 0.4em; }
+}
+
+.intro-dollar { animation: intro-fall linear infinite; }
+.intro-letter {
+  display: inline-block;
+  --lx: 0px; --ly: 0px; --lr: 0deg;
+  opacity: 0;
+  animation: intro-letter-in 0.9s cubic-bezier(0.2, 0.9, 0.3, 1.2) forwards;
+}
+.intro-letter:nth-child(4n)   { --lx: -60vw; --ly: -40vh; --lr: -90deg; }
+.intro-letter:nth-child(4n+1) { --lx:  60vw; --ly: -40vh; --lr:  90deg; }
+.intro-letter:nth-child(4n+2) { --lx: -50vw; --ly:  40vh; --lr:  60deg; }
+.intro-letter:nth-child(4n+3) { --lx:  50vw; --ly:  40vh; --lr: -60deg; }
+.intro-scan-1 {
+  background: linear-gradient(90deg, transparent, oklch(0.85 0.17 85 / 0.25), transparent);
+  animation: intro-scan 2.2s ease-in-out infinite;
+}
+.intro-scan-2 {
+  background: linear-gradient(90deg, transparent, oklch(0.7 0.2 200 / 0.18), transparent);
+  animation: intro-scan 2.8s ease-in-out 0.5s infinite reverse;
+}
+.intro-pulse { animation: intro-pulse 1.4s ease-out infinite; }
+.intro-bar-top { transform-origin: left; animation: intro-bar 1.2s ease-out forwards; }
+.intro-bar-bottom { transform-origin: right; animation: intro-bar 1.2s ease-out 0.2s forwards; }
+.intro-tagline { opacity: 0; animation: intro-tagline-in 1s ease-out forwards; }
+.intro-grid {
+  background-image:
+    linear-gradient(oklch(0.85 0.17 85 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.85 0.17 85 / 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+
 :root {
   --radius: 1rem;
   --background: oklch(0.08 0.01 270);
