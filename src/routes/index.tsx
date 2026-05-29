@@ -304,7 +304,7 @@ function Index() {
       </section>
 
       {/* CTA QUIERO MÁS INFORMACIÓN */}
-      <section className="px-5 max-w-xl mx-auto mt-12">
+      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto mt-12">
         <a
           href={WHATSAPP_INFO}
           target="_blank"
