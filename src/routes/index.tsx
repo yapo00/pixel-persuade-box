@@ -3,6 +3,7 @@ import { Facebook, Instagram, MapPin, MessageCircle, Phone, Play, Sparkles, Tren
 import logo from "@/assets/logo.webp";
 import presentacionVideo from "@/assets/video-presentacion.mp4";
 import { SocialButton } from "@/components/SocialButton";
+import { IntroOverlay } from "@/components/IntroOverlay";
 import { MarqueeGallery } from "@/components/MarqueeGallery";
 import work1 from "@/assets/work-1.jpeg";
 import work2 from "@/assets/work-2.jpeg";
@@ -66,8 +67,10 @@ const ADDRESS = "Calle Ingavi #253 entre Velasco y Colón, Santa Cruz — Bolivi
 function Index() {
   return (
     <main className="min-h-screen text-foreground overflow-hidden">
+      <IntroOverlay />
       {/* HERO */}
-      <section className="relative px-5 pt-12 pb-10 max-w-xl mx-auto">
+      <section className="relative px-5 pt-12 pb-10 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto">
+
         <div className="flex justify-center mb-6 animate-fade-up">
           <div className="relative">
             <div className="absolute -inset-4 rounded-3xl bg-primary/20 blur-2xl animate-glow" style={{ ['--glow-color' as string]: 'var(--gold)' }} />
@@ -130,7 +133,7 @@ function Index() {
       </section>
 
       {/* SOCIAL BUTTONS */}
-      <section className="px-5 max-w-xl mx-auto space-y-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3 animate-fade-up" style={{ animationDelay: "0.2s" }}>
         <SocialButton
           href={SOCIALS.facebook}
           variant="facebook"
@@ -170,45 +173,66 @@ function Index() {
       </section>
 
       {/* VIDEO PRESENTACIÓN */}
-      <section className="px-5 max-w-xl mx-auto mt-12 animate-fade-up" style={{ animationDelay: "0.25s" }}>
-        <div className="text-center mb-4">
-          <h2 className="text-2xl font-bold">
-            ¿Por qué necesitas una <span className="text-primary">Landing Page Bio</span>?
-          </h2>
-          <p className="text-sm text-muted-foreground mt-1">Descúbrelo en este video</p>
-        </div>
-        <div className="relative mx-auto rounded-3xl overflow-hidden border border-primary/30 bg-black aspect-[9/16] max-w-[320px] sm:max-w-[360px] shadow-[var(--shadow-glow)]">
-          {PRESENTATION_VIDEO ? (
-            PRESENTATION_VIDEO.endsWith(".mp4") ? (
-              <video src={PRESENTATION_VIDEO} autoPlay loop muted playsInline className="w-full h-full object-contain" />
+      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto mt-12 animate-fade-up" style={{ animationDelay: "0.25s" }}>
+        <div className="lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center">
+          <div className="text-center lg:text-left mb-4 lg:mb-0 lg:order-1">
+            <h2 className="text-2xl lg:text-4xl font-bold">
+              ¿Por qué necesitas una <span className="text-primary">Landing Page Bio</span>?
+            </h2>
+            <p className="text-sm lg:text-base text-muted-foreground mt-1 lg:mt-3">
+              Descúbrelo en este video y mira cómo convertimos visitas en clientes reales.
+            </p>
+            {/* CTA on desktop next to text */}
+            <a
+              href={WHATSAPP_QUIERO}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:inline-flex mt-6 group relative items-center gap-2 font-bold text-lg py-4 px-8 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-0.5"
+              style={{
+                backgroundImage: "var(--gradient-gold)",
+                color: "oklch(0.1 0 0)",
+                boxShadow: "var(--shadow-glow)",
+              }}
+            >
+              <Sparkles className="size-5" />
+              ¡Quiero mi página!
+              <Sparkles className="size-5" />
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:translate-x-full transition-transform duration-1000" />
+            </a>
+          </div>
+          <div className="relative mx-auto rounded-3xl overflow-hidden border border-primary/30 bg-black aspect-[9/16] max-w-[320px] sm:max-w-[360px] lg:max-w-[380px] shadow-[var(--shadow-glow)] lg:order-2">
+            {PRESENTATION_VIDEO ? (
+              PRESENTATION_VIDEO.endsWith(".mp4") ? (
+                <video src={PRESENTATION_VIDEO} autoPlay loop muted playsInline className="w-full h-full object-contain" />
+              ) : (
+                <iframe
+                  src={PRESENTATION_VIDEO}
+                  title="Video de presentación"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )
             ) : (
-              <iframe
-                src={PRESENTATION_VIDEO}
-                title="Video de presentación"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            )
-          ) : (
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center p-6 bg-gradient-to-br from-primary/10 to-transparent">
-              <div className="size-16 rounded-full bg-primary/20 flex items-center justify-center text-primary animate-glow" style={{ ['--glow-color' as string]: 'var(--gold)' }}>
-                <Play className="size-7 ml-1" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center p-6 bg-gradient-to-br from-primary/10 to-transparent">
+                <div className="size-16 rounded-full bg-primary/20 flex items-center justify-center text-primary animate-glow" style={{ ['--glow-color' as string]: 'var(--gold)' }}>
+                  <Play className="size-7 ml-1" />
+                </div>
+                <p className="text-sm text-muted-foreground max-w-xs">
+                  Espacio reservado para tu video.<br />
+                  <span className="text-xs">Edita <code className="text-primary">PRESENTATION_VIDEO</code> en el constructor.</span>
+                </p>
               </div>
-              <p className="text-sm text-muted-foreground max-w-xs">
-                Espacio reservado para tu video.<br />
-                <span className="text-xs">Edita <code className="text-primary">PRESENTATION_VIDEO</code> en el constructor.</span>
-              </p>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
-        {/* CTA QUIERO MI PÁGINA */}
+        {/* CTA QUIERO MI PÁGINA (mobile/tablet) */}
         <a
           href={WHATSAPP_QUIERO}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 group relative block w-full text-center font-bold text-lg py-4 px-6 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-0.5"
+          className="lg:hidden mt-5 group relative block w-full text-center font-bold text-lg py-4 px-6 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-0.5"
           style={{
             backgroundImage: "var(--gradient-gold)",
             color: "oklch(0.1 0 0)",
@@ -224,16 +248,17 @@ function Index() {
         </a>
       </section>
 
+
       {/* GALERÍA CONTINUA */}
       <section className="mt-14 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-        <div className="px-5 max-w-xl mx-auto text-center mb-6 space-y-2">
+        <div className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto text-center mb-6 space-y-2">
           <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary uppercase tracking-widest">
             <Sparkles className="size-3" /> Portafolio en vivo
           </span>
-          <h2 className="text-3xl font-extrabold">
+          <h2 className="text-3xl lg:text-4xl font-extrabold">
             Diseños que <span className="text-primary animate-pulse-soft">venden por ti</span> 24/7
           </h2>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm lg:text-base text-muted-foreground max-w-2xl mx-auto">
             Cada Landing Page Bio es una <span className="text-primary font-semibold">máquina de conversión</span> —
             pensada para captar atención en segundos y convertir cada visita en un cliente real.
           </p>
@@ -244,7 +269,8 @@ function Index() {
           <MarqueeGallery images={GALLERY_ROW_B} speed={50} reverse />
         </div>
 
-        <div className="px-5 max-w-xl mx-auto mt-6 grid grid-cols-3 gap-3 text-center">
+        <div className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto mt-6 grid grid-cols-3 gap-3 lg:gap-6 text-center">
+
           <div className="rounded-2xl border border-border bg-card/60 p-3">
             <p className="text-2xl font-extrabold text-primary">+150</p>
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Proyectos</p>
@@ -278,7 +304,7 @@ function Index() {
       </section>
 
       {/* CTA QUIERO MÁS INFORMACIÓN */}
-      <section className="px-5 max-w-xl mx-auto mt-12">
+      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-4xl mx-auto mt-12">
         <a
           href={WHATSAPP_INFO}
           target="_blank"
@@ -305,7 +331,7 @@ function Index() {
       </section>
 
       {/* HELP / CONTACT */}
-      <section className="px-5 max-w-xl mx-auto mt-8 space-y-4">
+      <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <a
           href={WHATSAPP_LINK}
           target="_blank"
