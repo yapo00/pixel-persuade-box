@@ -255,7 +255,7 @@ function Index() {
           <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary uppercase tracking-widest">
             <Sparkles className="size-3" /> Portafolio en vivo
           </span>
-          <h2 className="text-3xl lg:text-4xl font-extrabold">
+          <h2 className="text-3xl lg:text-4xl font-extrabold cine-rise">
             Diseños que <span className="text-primary animate-pulse-soft">venden por ti</span> 24/7
           </h2>
           <p className="text-sm lg:text-base text-muted-foreground max-w-2xl mx-auto">
