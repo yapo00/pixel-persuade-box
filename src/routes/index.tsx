@@ -86,7 +86,7 @@ function Index() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-xs text-primary">
             <Sparkles className="size-3" /> Landing Page Bio
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight cine-zoom">
             <span className="block animate-text-float">
               <span
                 className="bg-clip-text text-transparent animate-shimmer"
@@ -176,7 +176,7 @@ function Index() {
       <section className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto mt-12 animate-fade-up" style={{ animationDelay: "0.25s" }}>
         <div className="lg:grid lg:grid-cols-2 lg:gap-10 lg:items-center">
           <div className="text-center lg:text-left mb-4 lg:mb-0 lg:order-1">
-            <h2 className="text-2xl lg:text-4xl font-bold">
+            <h2 className="text-2xl lg:text-4xl font-bold cine-slide">
               ¿Por qué necesitas una <span className="text-primary">Landing Page Bio</span>?
             </h2>
             <p className="text-sm lg:text-base text-muted-foreground mt-1 lg:mt-3">
@@ -255,7 +255,7 @@ function Index() {
           <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary uppercase tracking-widest">
             <Sparkles className="size-3" /> Portafolio en vivo
           </span>
-          <h2 className="text-3xl lg:text-4xl font-extrabold">
+          <h2 className="text-3xl lg:text-4xl font-extrabold cine-rise">
             Diseños que <span className="text-primary animate-pulse-soft">venden por ti</span> 24/7
           </h2>
           <p className="text-sm lg:text-base text-muted-foreground max-w-2xl mx-auto">
@@ -319,7 +319,7 @@ function Index() {
             <div className="inline-flex items-center justify-center size-14 rounded-2xl bg-[var(--whatsapp)]/30 text-[var(--whatsapp)] mb-1 animate-float">
               <MessageCircle className="size-7" />
             </div>
-            <p className="text-2xl font-extrabold">
+            <p className="text-2xl font-extrabold cine-zoom">
               ¡Quiero más información!
             </p>
             <p className="text-sm text-muted-foreground">
