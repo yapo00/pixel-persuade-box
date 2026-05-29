@@ -86,7 +86,7 @@ function Index() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-xs text-primary">
             <Sparkles className="size-3" /> Landing Page Bio
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight cine-zoom">
             <span className="block animate-text-float">
               <span
                 className="bg-clip-text text-transparent animate-shimmer"
