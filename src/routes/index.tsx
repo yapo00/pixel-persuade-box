@@ -319,7 +319,7 @@ function Index() {
             <div className="inline-flex items-center justify-center size-14 rounded-2xl bg-[var(--whatsapp)]/30 text-[var(--whatsapp)] mb-1 animate-float">
               <MessageCircle className="size-7" />
             </div>
-            <p className="text-2xl font-extrabold">
+            <p className="text-2xl font-extrabold cine-zoom">
               ¡Quiero más información!
             </p>
             <p className="text-sm text-muted-foreground">
