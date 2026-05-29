@@ -82,8 +82,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Lovable App" },
       { name: "twitter:description", content: "Bio Link Hub creates a customizable bio landing page to showcase social media, products, and contact information." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/YrIaUWrBnOYHmXLViRgPsJ6IsKW2/social-images/social-1779283591712-1001835663.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/YrIaUWrBnOYHmXLViRgPsJ6IsKW2/social-images/social-1779283591712-1001835663.webp" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/YrIaUWrBnOYHmXLViRgPsJ6IsKW2/social-images/social-1780092006905-captura_productora.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/YrIaUWrBnOYHmXLViRgPsJ6IsKW2/social-images/social-1780092006905-captura_productora.webp" },
     ],
     links: [
       {
