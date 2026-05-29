@@ -251,14 +251,14 @@ function Index() {
 
       {/* GALERÍA CONTINUA */}
       <section className="mt-14 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-        <div className="px-5 max-w-xl mx-auto text-center mb-6 space-y-2">
+        <div className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto text-center mb-6 space-y-2">
           <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary uppercase tracking-widest">
             <Sparkles className="size-3" /> Portafolio en vivo
           </span>
-          <h2 className="text-3xl font-extrabold">
+          <h2 className="text-3xl lg:text-4xl font-extrabold">
             Diseños que <span className="text-primary animate-pulse-soft">venden por ti</span> 24/7
           </h2>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm lg:text-base text-muted-foreground max-w-2xl mx-auto">
             Cada Landing Page Bio es una <span className="text-primary font-semibold">máquina de conversión</span> —
             pensada para captar atención en segundos y convertir cada visita en un cliente real.
           </p>
@@ -269,7 +269,8 @@ function Index() {
           <MarqueeGallery images={GALLERY_ROW_B} speed={50} reverse />
         </div>
 
-        <div className="px-5 max-w-xl mx-auto mt-6 grid grid-cols-3 gap-3 text-center">
+        <div className="px-5 max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto mt-6 grid grid-cols-3 gap-3 lg:gap-6 text-center">
+
           <div className="rounded-2xl border border-border bg-card/60 p-3">
             <p className="text-2xl font-extrabold text-primary">+150</p>
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground">Proyectos</p>
