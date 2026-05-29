@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const DOLLARS = Array.from({ length: 28 });
 const RAIN_DOLLARS = Array.from({ length: 22 });
-const LETTERS = "CAPTURA DIGITAL".split("");
+const WORDS = ["CAPTURA", "DIGITAL"];
 
 const INTRO_MS = 4000;
 const FADE_MS = 800;
