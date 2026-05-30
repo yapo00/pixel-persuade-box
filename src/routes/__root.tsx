@@ -82,8 +82,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Captura-Estudios" },
       { name: "twitter:description", content: "Landing pages estratégicas diseñadas para maximizar ventas y convertir visitas en clientes." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/YrIaUWrBnOYHmXLViRgPsJ6IsKW2/social-images/social-1780092291244-parapagina_1_L.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/YrIaUWrBnOYHmXLViRgPsJ6IsKW2/social-images/social-1780092291244-parapagina_1_L.webp" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a7705428-8dd9-410e-92e1-e16e4f2f5c28" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a7705428-8dd9-410e-92e1-e16e4f2f5c28" },
     ],
     links: [
       {
